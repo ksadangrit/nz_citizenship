@@ -134,10 +134,20 @@ For Google Sheets, I select the cells or table, click 'Insert,' then 'Chart,' an
 ### Citizenships granted from 1949 to 2022
 ![Screen Shot 2024-04-03 at 11 06 05 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/83c127e7-3306-4914-a3b5-573f33e395e8)
 
+**Findings**
+- Citizenships granted saw a sharp decline from 1949 to 1950, but have steadily risen since then until 1978.
+- Overall, there's been an increasing trend in citizenships granted over the past 74 years.
+- Significant drops occurred in 1999, 2010, and 2021 compared to the preceding years.
+- In 2020, the number of citizenships granted reached a peak at 40,355, more than doubling the count from the previous year.
 
 ### Citizenships granted across decades
 ![Screen Shot 2024-04-03 at 11 14 47 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/2022142f-07d0-44a5-9d5a-b84a6db13c5f)
 
+**Findings**
+- Citizenships granted have increased consistently in every decade.
+- A notable surge occurred between the 1990s and 2000s.
+- The 2010s witnessed the highest number of citizenships granted, while the 1950s had the lowest count.
+- It's important to note that while the graph suggests a significant decrease from the 2010s to the 2020s, this conclusion cannot be drawn conclusively as the dataset only extends to the year 2022.
 
 ### Top 5 birth countries for each decades 
 ![Screen Shot 2024-04-03 at 3 11 41 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/9ce59d0e-09ad-4849-8870-2b509a40daf9)
@@ -145,6 +155,7 @@ For Google Sheets, I select the cells or table, click 'Insert,' then 'Chart,' an
 **Findings**
 - The United Kingdom consistently ranks in the top 2 countries across all decades, holding the first position in 1949 and during the 1970s to 1990s.
 - The UK has been surpassed only twice: by the Netherlands in the 1950s and 1960s, and by India in the 2020s.
+- From 1949 to the 1980s, the majority of the top 5 birth countries were from Western regions, including the UK, Netherlands, and Australia. However, this trend began to shift in the 1990s. 
 - Since the 1970s, Samoa has consistently been among the top 5 countries every decade except the 2000s.
 - The majority of new citizens from China were granted citizenships in the 1990s and 2000s.
 
@@ -152,10 +163,21 @@ For Google Sheets, I select the cells or table, click 'Insert,' then 'Chart,' an
 ### Top 10 birth countries where new citizens come from
 ![Screen Shot 2024-04-03 at 11 07 56 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/4d0b63b8-c2d1-4e8f-8719-fdcd148c9e66)
 
-
+**Findings**
+- Since 1949, the UK has contributed the most to the number of new citizens, with over 233,000 individuals originating from there, surpassing the second-ranked Samoa by more than 2.8 times.
+- Notably, there is a marginal difference of less than 10,000 individuals between countries ranked from second to seventh.
+- Half of the top 10 countries are from Asia, with India ranking third, China fifth, and the Philippines, South Korea, and Taiwan occupying the seventh to ninth positions, respectively.
+  
 ### Top 5 birth countries (of all time) across decades
 ![Screen Shot 2024-04-03 at 11 14 15 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/3328e00f-da16-4690-851d-b1e142e089d5)
 
+**Findings**
+- The UK saw a surge in citizenships granted from the 1960s to the 1980s, peaking in the 1980s with over 60,000 immigrants gaining citizenship. Samoa's highest peak was in the 2010s, with a secondary peak in the 1980s.
+- The 1980s marked a significant increase in citizenships granted across all countries.
+- Trend lines for the UK and Samoa are similar, with Samoa's increase beginning in the 1970s. India, China, and South Africa saw notable increases from the 1980s onwards.
+- India's peak was in the 2000s, while China and South Africa peaked in the 2010s.
+- The apparent decrease in citizenships granted in the 2020s may not be conclusive, as data only extends to 2022.
+  
 ### Forecasting future trends for the coming years
 ![Screen Shot 2024-04-03 at 11 39 48 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/5f568b42-17a9-45ac-89a9-fbaaf13f2fca)
 
