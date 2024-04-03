@@ -93,7 +93,7 @@ We'll now analyse trends in immigration and citizenship granting across the 74 y
 - Add new columns for each decade, spanning from the 1950s to the 2020s. Ensure that the year 1949 is excluded from the 1950s decade, and the 2020s only includes the years 2020 to 2022.
 
 3.1.2 Calculate Total Number for Each Decade:
-- In each decade column, use the SUM function to calculate the total number for each country and overall during that decade.
+- In each decade column, use the `SUM` function to calculate the total number for each country and overall during that decade.
   
 For example, to calculate the total number for the 1950s:
 - In the column representing the 1950s, use the formula `=SUM($F2:$O2)` to sum the values from the corresponding range for each country.
@@ -102,17 +102,40 @@ For example, to calculate the total number for the 1950s:
 
 Copy the new table with the decade columns and paste it into a new sheet for later visualisations. 
 
-#### 3.2 Rank top 5 for each decades
+#### 3.2 Rank top 5 for each decade
 - In the new sheet that we've just created for the decade columns, apply filter to the entire table and hide the total row. 
 - Sort the 1950s column in descending order. 
 - Copy and paste only the top 5 countries and the total into a new sheet. 
 - Add a Rank column and assign colors using the Alternating colors option. 
 - Repeat these steps for other decades, sorting in descending order and hiding irrelevant columns, then copy and paste into the existing sheet.
 
+![Screen Shot 2024-04-03 at 3 11 41 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/9ce59d0e-09ad-4849-8870-2b509a40daf9)
+
+### 4. Making predictions for the number of citizenships granted 
+#### 4.1 Yearly
+- Copy the year and total number into new columns.
+- Highlight all the cells containing years and total numbers.
+- Drag the fill handle down until the year 2040 to see the forecasted numbers.
+- Create another column for the percentage change from the previous year using the formula `=(B3-B2)/B2*100`, where B3 represents the year before and B2 represents the second year for which we want to calculate the change.
+
+#### 4.2 Decades
+![Screen Shot 2024-04-03 at 3 35 56 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/139665cf-31ed-4b91-a032-5f8bb34b222c)
+
 ## Visualisations and Findings
 In this section, I use both Google Sheets and Looker Studio to visualize the findings. I opted for Google Sheets to visualize certain findings due to its convenient built-in charting function. However, for creating a dashboard, Looker Studio provides user-friendly options that are highly effective and easy to use.
 
-For Google Sheets, I select the cells or table, click 'Insert,' then 'Chart,' and choose the chart type. In Looker Studio, I connect Google Sheets, select the data sheet, and add a chart that best conveys the results. I won't delve into the step-by-step process of creating each chart as it's relatively straightforward. I also will refrain from revisiting specific findings previously discussed in the preceding section such as max and min values.
+For Google Sheets, I select the cells or table, click 'Insert,' then 'Chart,' and choose the chart type. In Looker Studio, I connect Google Sheets, select the data sheet, and add a chart that best conveys the results. I won't delve into the step-by-step process of creating each chart as it's relatively straightforward.
+
+![Screen Shot 2024-04-03 at 3 11 41 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/ce5d37e0-592b-4a2c-9ac8-31aeebc00bdb)
+
+### Key Findings
+
+Click [here](https://lookerstudio.google.com/s/uhviqdY3X20) to access the dashboard on the Looker Studio.
+
+![NZ_Citizenship](https://github.com/ksadangrit/nz_citizenship/assets/156267785/13731807-4b01-42ac-b926-62e7c5dce5ec)
+
+
+
 
 
 
