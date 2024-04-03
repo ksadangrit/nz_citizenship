@@ -9,7 +9,7 @@ This project represents a small-scale analysis driven by my personal curiosity a
 
 Although it lacks detailed demographic information, such as sexes and ages of individuals, my goal is to identify trends, particularly the top and least represented countries of origin for immigrants to New Zealand. By doing so, I aim to gain insights into migration patterns and their broader implications for the population dynamics of New Zealand.
 
-**Tools: Google Sheets** for analysis and **Looker Studio** for visualizations and dashboard creation.
+**Tools: Google Sheets** for analysis and **Looker Studio** for visualizations and dashboard creation. I have chosen Google Sheets for cleaning and processing the data, considering the relatively small size of the dataset with just over 300 rows and less than 80 columns. Additionally, Looker Studio is a convenient tool for creating dashboards, offering seamless connectivity with other data sources.
 
 #### Questions
 1. Which countries contribute most to the number of new citizens?
@@ -44,6 +44,7 @@ The picture below provides a snapshot of the dataset.
 * Check for any duplicate using the Data cleanup → Remove duplicates
 * Trim any whitespaces using Trim whitespace under the Data cleanup
 * Change the column name from `_id` to `ID`
+* As no empty rows or NA values are present, we won't eliminate any rows
 
 **Replace blank cells with 0**
 
@@ -57,6 +58,8 @@ Our analysis confirms that the minimum number in this table is 1. To prevent con
 - Verify all calculated data matches the original, then replace the original table with the updated dataset.
 
 ## Analysis 
+In this section, I will primarily discuss the steps I employ to sort, filter, or calculate the data for analysis. Findings will be discussed as relevant. However, the majority of the findings will be visualized and discussed in the next part of this project.
+
 ### 1. Max, Min and Average
 #### 1.1 Finding max and min values 
 We’ll utilize conditional formatting to highlight the maximum and minimum values across all years.
@@ -89,6 +92,7 @@ Note: We won't be checking for the average or median number of citizenships gran
 ### 3. Decades
 #### 3.1 Group years by decades 
 We'll now analyse trends in immigration and citizenship granting across the 74 years.
+
 3.1.1 Create Decade Columns:
 - Add new columns for each decade, spanning from the 1950s to the 2020s. Ensure that the year 1949 is excluded from the 1950s decade, and the 2020s only includes the years 2020 to 2022.
 
@@ -100,7 +104,7 @@ For example, to calculate the total number for the 1950s:
 - Extend this formula downwards to calculate the total for each country.
 - At the bottom of the column, use the formula `=SUM(F2:O2)` to calculate the overall total for the 1950s decade.
 
-Copy the new table with the decade columns and paste it into a new sheet for later visualisations. 
+Copy the new table with the decade columns and paste it into a new sheet named 'decades' for later visualizations.
 
 #### 3.2 Rank top 5 for each decade
 - In the new sheet that we've just created for the decade columns, apply filter to the entire table and hide the total row. 
@@ -109,9 +113,7 @@ Copy the new table with the decade columns and paste it into a new sheet for lat
 - Add a Rank column and assign colors using the Alternating colors option. 
 - Repeat these steps for other decades, sorting in descending order and hiding irrelevant columns, then copy and paste into the existing sheet.
 
-![Screen Shot 2024-04-03 at 3 11 41 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/9ce59d0e-09ad-4849-8870-2b509a40daf9)
-
-### 4. Making predictions for the number of citizenships granted 
+### 4. Forecasting and Percentage Change
 #### 4.1 Yearly
 - Copy the year and total number into new columns.
 - Highlight all the cells containing years and total numbers.
@@ -119,20 +121,54 @@ Copy the new table with the decade columns and paste it into a new sheet for lat
 - Create another column for the percentage change from the previous year using the formula `=(B3-B2)/B2*100`, where B3 represents the year before and B2 represents the second year for which we want to calculate the change.
 
 #### 4.2 Decades
-![Screen Shot 2024-04-03 at 3 35 56 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/139665cf-31ed-4b91-a032-5f8bb34b222c)
+- Copy the decades and total columns and paste them into a new sheet.
+- Add another column for the percentage change, applying the formula from step 4.2 but adjusting the columns from B to N.
+- Apply conditional formatting using a color scale from green to red to visually represent the range of percentage changes for each decade, with green indicating lower values and red indicating higher values.
+  
 
 ## Visualisations and Findings
 In this section, I use both Google Sheets and Looker Studio to visualize the findings. I opted for Google Sheets to visualize certain findings due to its convenient built-in charting function. However, for creating a dashboard, Looker Studio provides user-friendly options that are highly effective and easy to use.
 
 For Google Sheets, I select the cells or table, click 'Insert,' then 'Chart,' and choose the chart type. In Looker Studio, I connect Google Sheets, select the data sheet, and add a chart that best conveys the results. I won't delve into the step-by-step process of creating each chart as it's relatively straightforward.
 
-![Screen Shot 2024-04-03 at 3 11 41 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/ce5d37e0-592b-4a2c-9ac8-31aeebc00bdb)
+### Citizenships granted from 1949 to 2022
+![Screen Shot 2024-04-03 at 11 06 05 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/83c127e7-3306-4914-a3b5-573f33e395e8)
+
+
+### Citizenships granted across decades
+![Screen Shot 2024-04-03 at 11 14 47 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/2022142f-07d0-44a5-9d5a-b84a6db13c5f)
+
+
+### Top 5 birth countries for each decades 
+![Screen Shot 2024-04-03 at 3 11 41 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/9ce59d0e-09ad-4849-8870-2b509a40daf9)
+
+**Findings**
+- The United Kingdom consistently ranks in the top 2 countries across all decades, holding the first position in 1949 and during the 1970s to 1990s.
+- The UK has been surpassed only twice: by the Netherlands in the 1950s and 1960s, and by India in the 2020s.
+- Since the 1970s, Samoa has consistently been among the top 5 countries every decade except the 2000s.
+- The majority of new citizens from China were granted citizenships in the 1990s and 2000s.
+
+
+### Top 10 birth countries where new citizens come from
+![Screen Shot 2024-04-03 at 11 07 56 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/4d0b63b8-c2d1-4e8f-8719-fdcd148c9e66)
+
+
+### Top 5 birth countries (of all time) across decades
+![Screen Shot 2024-04-03 at 11 14 15 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/3328e00f-da16-4690-851d-b1e142e089d5)
+
+### Forecasting future trends for the coming years
+![Screen Shot 2024-04-03 at 11 39 48 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/5f568b42-17a9-45ac-89a9-fbaaf13f2fca)
+
+### Analyzing the percentage change for each year
+![Screen Shot 2024-04-03 at 10 41 39 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/8a6fe5d2-5104-4407-bde0-86ea40c969f9)
 
 ### Key Findings
 
-Click [here](https://lookerstudio.google.com/s/uhviqdY3X20) to access the dashboard on the Looker Studio.
+Click [here](https://lookerstudio.google.com/s/hT1nYgxOJcU) to access the dashboard on the Looker Studio.
 
-![NZ_Citizenship](https://github.com/ksadangrit/nz_citizenship/assets/156267785/13731807-4b01-42ac-b926-62e7c5dce5ec)
+![NZ_Citizenship](https://github.com/ksadangrit/nz_citizenship/assets/156267785/10e63677-9967-49b9-9dbf-6c162b3a37e5)
+
+
 
 
 
