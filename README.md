@@ -23,11 +23,16 @@ Although it lacks detailed demographic information, such as sexes and ages of in
 * Investigate specific countries.
 
 ### Analytical workflow
-
+1. Importing data
+2. Cleaning the data
+3. Analysis
+4. Visualisations and Findings
+   
 ## Importing data
 Download the CSV file from this [website](https://catalogue.data.govt.nz/dataset/country-of-birth-for-people-granted-new-zealand-citizenship/resource/5a2d19fa-b73a-4275-b32b-1335beade1a7). This data is provided by the Department of Internal Affairs
 
 The picture below provides a snapshot of the dataset.
+
 ![Screen Shot 2024-04-03 at 1 27 29 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/67c4e3de-d46e-4212-afca-096fc57f9d07)
 
 #### Columns in the table
@@ -119,6 +124,7 @@ Copy the new table with the decade columns and paste it into a new sheet named '
 - Highlight all the cells containing years and total numbers.
 - Drag the fill handle down until the year 2040 to see the forecasted numbers.
 - Create another column for the percentage change from the previous year using the formula `=(B3-B2)/B2*100`, where B3 represents the year before and B2 represents the second year for which we want to calculate the change.
+- Create a new column using the SUM function to calculate the cumulative total from the current year and all preceding years combined.
 
 #### 4.2 Decades
 - Copy the decades and total columns and paste them into a new sheet.
@@ -179,19 +185,48 @@ For Google Sheets, I select the cells or table, click 'Insert,' then 'Chart,' an
 - The apparent decrease in citizenships granted in the 2020s may not be conclusive, as data only extends to 2022.
   
 ### Forecasting future trends for the coming years
-![Screen Shot 2024-04-03 at 11 39 48 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/5f568b42-17a9-45ac-89a9-fbaaf13f2fca)
+![Screen Shot 2024-04-04 at 2 28 34 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/b83032b3-fe90-4c9e-9275-a7c4c6c9401c)
 
+**Findings**
+- Overall, there's been an upward trend in the number of citizenships granted each year, despite occasional fluctuations.
+- According to historical data, there's a projected decrease of around 27% in 2023.
+- However, the trend is expected to reverse, with over 33,000 citizenships granted in 2032, which is 10 years from our last year in the dataset, and over 36,000 in 2040.
+- By 2040, it's projected that over 1.57 millions immigrants will be granted citizenship.
+  
 ### Analyzing the percentage change for each year
 ![Screen Shot 2024-04-03 at 10 41 39 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/8a6fe5d2-5104-4407-bde0-86ea40c969f9)
 
-### Key Findings
+**Findings**
+- The 1950s saw a notably low number of citizenships granted compared to 1949.
+- The most significant percentage change occurred between the 1960s and 1970s, with a 220% increase, indicating a tripling of citizenships granted compared to the previous decade.
+- Percentage changes increased in each subsequent decade, with the lowest increases observed in the 1990s and 2010s.
+- While the total number of citizenships granted in the 2020s may appear low at present, it's expected to surpass the count from the 2010s as more data becomes available over the next seven years.
+  
+### Key Findings and Insights
 
 Click [here](https://lookerstudio.google.com/s/hT1nYgxOJcU) to access the dashboard on the Looker Studio.
 
 ![NZ_Citizenship](https://github.com/ksadangrit/nz_citizenship/assets/156267785/10e63677-9967-49b9-9dbf-6c162b3a37e5)
 
+- The highest number of citizenships, 40,355, was granted in 2022, while only 247 were granted in 1950.
+- Since 1949, over 969,000 citizenships have been granted, representing about 18% of New Zealand's total population[^1].
+- Notably, the 1980s marked a significant increase in citizenships granted across the top 5 countries.
+- The United Kingdom stands out with over 233,000 citizenships granted, representing over 24% of all new citizens. This is largely due to historical colonial ties.
+- The 1980s saw a surge in citizenship grants for the UK, while the other top 5 countries experienced peaks in the 2010s.
+- Out of 330 countries, the top 10 birth countries collectively contribute to nearly 70% of all new citizens granted since 1949.
+- A positive trend in citizenship grants has been observed since the 1950s, indicating a steady increase over the decades.
+- Despite the apparent low total for the 2020s so far, it's expected to surpass the 2010s given the remaining 7 years of data.
+- The substantial contribution from populous countries like China, India, and the US reflects migration patterns.
+- The presence of many Asians and Samoans in the top 10 aligns with New Zealand's diverse demographic makeup[^2]
+- If the trend continues, it's projected that over 1.57 millions immigrants will be granted citizenship by 2040.
 
-
+### Recommendations for Further Study
+- Incorporating additional demographic data, such as sexes and ages, could provide valuable insights into citizenship distribution and application factors.
+- Analyzing demographic trends could help detect patterns and criteria influencing citizenship grants.
+- Consideration of external factors like governmental policies and citizenship quotas may enhance the accuracy of citizenship grant forecasts.
+  
+[^1]: According to the population estimate as of December 31, 2022, from the NZ Stats [website](https://www.stats.govt.nz/information-releases/national-population-estimates-at-31-december-2022/).
+[^2]: According to the information provided by EHINZ's [website](https://www.ehinz.ac.nz/indicators/population-vulnerability/ethnic-profile/#:~:text=70.2%25%20European%20(3%2C297%2C860%20people),15.1%25%20Asian%20(707%2C600%20people)) in 2018, which is the latest available data.
 
 
 
