@@ -5,9 +5,9 @@
 _Image by <a href="https://pixabay.com/users/gonta65-5092573/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2395523">gonta65</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2395523">Pixabay</a>_
 
 ## Introduction
-This project represents a small-scale analysis driven by my personal curiosity as an immigrant and the desire to understand migration dynamics.The dataset, spanning from 1949 to 2022 (74 years), provides a summary of the number of citizenships granted over time. 
+This project represents a small-scale analysis driven by my personal curiosity as an immigrant and the desire to understand migration dynamics. The dataset, spanning from 1949 to 2022 (74 years), provides a summary of the number of citizenships granted over time.
 
-Although it lacks detailed demographic information, such as sexes and ages of individuals, my goal is to identify trends, particularly the top and least represented countries of origin for immigrants to New Zealand. By doing so, I aim to gain insights into migration patterns and their broader implications for the population dynamics of New Zealand.
+Although it lacks detailed demographic information, such as sexes and ages of individuals, my goal is to identify trends, particularly the most and least represented countries of origin for immigrants to New Zealand. By doing so, I aim to gain insights into migration patterns and their broader implications for the population dynamics of New Zealand.
 
 **Tools: Google Sheets** for analysis and **Looker Studio** for visualizations and dashboard creation. I have chosen Google Sheets for cleaning and processing the data, considering the relatively small size of the dataset with just over 300 rows and less than 80 columns. Additionally, Looker Studio is a convenient tool for creating dashboards, offering seamless connectivity with other data sources.
 
@@ -46,20 +46,20 @@ The picture below provides a snapshot of the dataset.
 ## Cleaning the data 
 * Align all header positions to the center.
 * Make the country of birth cell bigger and change the % column to ‘Percentage’ for readability. 
-* Check for any duplicate using the Data cleanup → Remove duplicates
+* Check for any duplicates using the Data cleanup → Remove duplicates
 * Trim any whitespaces using Trim whitespace under the Data cleanup
 * Change the column name from `_id` to `ID`
 * As no empty rows or NA values are present, we won't eliminate any rows
 
 **Replace blank cells with 0**
 
-The presence of empty cells in the table implies that no immigrants from certain countries were granted citizenship in certain years. To verify this, we will use the MIN function (`=MIN(E2:BZ331`) ) to check for the minimum value, ensuring it's either 1 or 0. 
+The presence of empty cells in the table implies that no immigrants from certain countries were granted citizenship in certain years. To verify this, we will use the MIN function `=MIN(E2:BZ331)` to check for the minimum value, to check that it is not 0. 
 
 Our analysis confirms that the minimum number in this table is 1. To prevent confusion and errors in calculations or visualizations reliant on numerical data, we will replace all empty cells with 0 by using `IF` statements with `ISBLANK` and `ARRAYFORMULA` for data manipulation.
 
 - Copy columns `C1:BZ1` (Total, %, 1949 - 2022) to `CD` column. Also, copy IDs and country names (A1:B331) to `CC` column.
 - Enter `=ARRAYFORMULA(IF(ISBLANK(E2:BZ331), 0, E2:BZ331))` in `CF2` to duplicate numerical data, replacing blanks with 0.
-- Calculate total using `SUM` and percentage with `=IFERROR(CD2/SUM($CD$2:CD$331)*100, ""),` ensuring two decimal points for the new percentage column (CE).
+- Calculate total using `SUM` and percentage with `=IFERROR(CD2/SUM($CD$2:CD$331)*100, "")`, ensuring two decimal points for the new percentage column (CE).
 - Verify all calculated data matches the original, then replace the original table with the updated dataset.
 
 ## Analysis 
@@ -83,9 +83,9 @@ We'll examine this across all years using the formula `=AVERAGE(E332:BZ332)`.
 
 ### 2. Finding top 10 and last 10 countries
 #### 2.1 Top 10 birth countries
-- Select all sales data.
+- Select all data cells.
 - Go to Data → Create a filter → Click the sort button next to Total → Sort Z to A (Descending order).
-- Save as a new sheet named "Top 10 countries."
+- Save as a new sheet named "Top 10 countries".
 
 #### 2.2 Last 10 birth countries
 - Repeat the steps in 2.1, but change the sorting order to ascending.
@@ -155,7 +155,7 @@ For Google Sheets, I select the cells or table, click 'Insert,' then 'Chart,' an
 - The 2010s witnessed the highest number of citizenships granted, while the 1950s had the lowest count.
 - It's important to note that while the graph suggests a significant decrease from the 2010s to the 2020s, this conclusion cannot be drawn conclusively as the dataset only extends to the year 2022.
 
-### Top 5 birth countries for each decades 
+### Top 5 birth countries for each decade
 ![Screen Shot 2024-04-03 at 3 11 41 PM](https://github.com/ksadangrit/nz_citizenship/assets/156267785/9ce59d0e-09ad-4849-8870-2b509a40daf9)
 
 **Findings**
