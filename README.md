@@ -81,7 +81,7 @@ We'll examine this across all years using the formula `=AVERAGE(E332:BZ332)`.
 
 **Finding**: Around **13,103** immigrants have been granted citizenship every year.
 
-### 2. Finding Top 10 and Last 10 countries
+### 2. Finding top 10 and last 10 countries
 #### 2.1 Top 10 birth countries
 - Select all sales data.
 - Go to Data → Create a filter → Click the sort button next to Total → Sort Z to A (Descending order).
@@ -98,10 +98,10 @@ Note: We won't be checking for the average or median number of citizenships gran
 #### 3.1 Group years by decades 
 We'll now analyse trends in immigration and citizenship granting across the 74 years.
 
-3.1.1 Create Decade Columns:
+3.1.1 Create decade columns:
 - Add new columns for each decade, spanning from the 1950s to the 2020s. Ensure that the year 1949 is excluded from the 1950s decade, and the 2020s only includes the years 2020 to 2022.
 
-3.1.2 Calculate Total Number for Each Decade:
+3.1.2 Calculate total number for each decade:
 - In each decade column, use the `SUM` function to calculate the total number for each country and overall during that decade.
   
 For example, to calculate the total number for the 1950s:
@@ -118,7 +118,7 @@ Copy the new table with the decade columns and paste it into a new sheet named '
 - Add a Rank column and assign colors using the Alternating colors option. 
 - Repeat these steps for other decades, sorting in descending order and hiding irrelevant columns, then copy and paste into the existing sheet.
 
-### 4. Forecasting and Percentage Change
+### 4. Forecasting and percentage change
 #### 4.1 Yearly
 - Copy the year and total number into new columns.
 - Highlight all the cells containing years and total numbers.
@@ -202,7 +202,7 @@ For Google Sheets, I select the cells or table, click 'Insert,' then 'Chart,' an
 - Percentage changes increased in each subsequent decade, with the lowest increases observed in the 1990s and 2010s.
 - While the total number of citizenships granted in the 2020s may appear low at present, it's expected to surpass the count from the 2010s as more data becomes available over the next seven years.
   
-### Key Findings and Insights
+### Key Findings and insights
 
 Click [here](https://lookerstudio.google.com/s/hT1nYgxOJcU) to access the dashboard on the Looker Studio.
 
@@ -220,7 +220,7 @@ Click [here](https://lookerstudio.google.com/s/hT1nYgxOJcU) to access the dashbo
 - The presence of many Asians and Samoans in the top 10 aligns with New Zealand's diverse demographic makeup[^2]
 - If the trend continues, it's projected that over 1.57 millions immigrants will be granted citizenship by 2040.
 
-### Recommendations for Further Study
+### Recommendations for further Study
 - Incorporating additional demographic data, such as sexes and ages, could provide valuable insights into citizenship distribution and application factors.
 - Analyzing demographic trends could help detect patterns and criteria influencing citizenship grants.
 - Consideration of external factors like governmental policies and citizenship quotas may enhance the accuracy of citizenship grant forecasts.
